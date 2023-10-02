@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter:wght@400;700&family=Josefin+Sans:wght@300;400;600&family=Kumbh+Sans:wght@700&family=League+Spartan:wght@400;700&family=Lexend+Deca:wght@400;700&family=Montserrat:wght@600&family=Open+Sans&family=Outfit:wght@100;300;400;600&family=Overpass:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    footer{
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 10px 10px 0px 0px;
+    }
+    body{
+      /* background: url(./design/active-states.jpg) no-repeat center fixed; */
+      background: url(./images/bg-pattern-desktop.svg) no-repeat fixed center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;c
+      padding: 0;
+    }
+    .container{
+      transition: 0.5s ease;
+      width: 1440px;
+      height: 800px;
+      display: flex;
+      box-sizing: border-box;
+      position: relative;
+      font-family: 'Josefin Sans';
+    }
+    .hero{
+      padding: 65px 0px 40px 0px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+    }
+    .container-hero{
+      width: 500px;
+    }
+    .hero .container-hero > img{
+      width: 160px;
+      margin-bottom: 26%;
+    }
+    .container-hero > h1{
+      font-size: 65px;
+      margin: 0;
+      padding: 0;
+      letter-spacing: 16px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      line-height: 70px;
+    }
+    .container-hero > h1 > p{
+      margin: 0;
+      padding: 0;
+      font-weight: 300;
+      color: hsl(0, 36%, 70%);
+    }
+    .container-hero > p{
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      letter-spacing: 0.07px;
+      color: hsl(0, 36%, 70%);
+      padding: 0;
+      margin: 0;
+      width: 90%;
+      margin-bottom: 8%;
+    }
+    .input{
+      position: relative;
+      width: inherit;
+      height: 55px;
+    }
+    .input > input{
+      width: 88%;
+      height: 52px;
+      background-color: transparent;
+      border-radius: 100px;
+      border: none;
+      text-indent: 30px;
+      font-family: 'Josefin Sans';
+      font-size: 16px;
+      border: 2px solid hsl(0, 6%, 24%);
+    }
+    .input > input::placeholder{
+      font-family: 'Josefin Sans';
+      font-size: 16px;
+    }
+    .input > img{
+      display: none;
+      position: absolute;
+      right: 34%;
+      top: 30%;
+    }
+    .submit{
+      position: absolute;
+      width: 100px;
+      border-radius: 100px;
+      height: 105%;
+      top: 0;
+      right: 10%;
+      background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      border: none;
+      color: white;
+      font-family: 'Josefin Sans';
+      font-size: 25px;
+      text-align: center;
+      box-shadow: 5px 10px 10px hsl(0, 80%, 86%, 0.6);
+    }
+    .submit:hover{
+      background-image: linear-gradient(135deg, hsl(0, 90%, 96%),hsl(0, 79%, 77%));
+    }
+    .image-hero {
+      height: inherit;
+    }
+    .image-hero img{
+      height: inherit;
+    }
+    .image-hero-mobile{
+      display: none;
+    }
+    @media screen and (max-width:1000px) {
+        .image-hero-mobile{
+          display: block;
+        }
+        body{
+          flex-direction: column;
+          background: url(./images/bg-pattern-desktop.svg) center no-repeat fixed;
+          background-size: cover;
+        }
+        .container{
+          transition: 0.5s ease;
+          flex-direction: column;
+          width: 375px;
+          height: 800px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: start;
+          padding: 0;
+          margin: 0;
+        }
+        .container-hero{
+          width: inherit;
+        }
+        .hero .container-hero > img{
+          width: 100px;
+          margin-left: 30px;
+          margin-bottom: 9%;
+        }
+        .hero{
+          padding: 0;
+          box-sizing: border-box;
+          padding-top: 30px;
+        }
+        .container-hero h1{
+          margin-top: 50px;
+          text-align: center;
+          font-size: 40px;
+          letter-spacing: 10px;
+          line-height: 45px;
+        }
+        .container-hero > p{
+          text-align: center;
+          width: 300px;
+          margin: 0 auto;
+          font-size: 14px;
+          line-height: 21px;
+        }
+        .input{
+          text-align: center;
+          margin: 0 auto;
+          margin-top: 35px;
+          width: 300px;
+          height: 40px;
+        }
+        .input > input{
+          width: 300px;
+          height: 40px;
+          border: 1px solid hsl(0, 6%, 24%);
+        }
+        .submit{
+          position: absolute;
+          top: 0;
+          right: -10px;
+          width: 70px;
+          height: 45px
+        }
+
+        .image-hero{
+          display: none;
+        }
+        .image-hero img{
+          width: 100%;
+          height: 100%;
+        }
+        .input > img{
+          right: 22%;
+        }
+    }
+    *{
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <content class="hero">
+      <div class="container-hero">
+        <img src="./images/logo.svg" alt="">
+        <picture class="image-hero-mobile">
+          <img src="./images/hero-mobile.jpg" alt="Hero Mobile">
+        </picture>
+        <h1><p>We're</p> coming soon</h1>
+        <p>
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our launch deals.
+        </p>
+        <div class="input">
+          <input type="text" id="email-input" placeholder="Email Address">
+          <img src="./images/icon-error.svg" alt="Icon Error" class="icon-error">
+          <button class="submit">></button>
+        </div>
+      </div>
+    </content>
+    <picture class="image-hero">
+      <img src="./images/hero-desktop.jpg" alt="Desktop Hero Image">
+    </picture>
+  </main>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Farid Satria</a>.
+    </p>
+  </footer>
+
+  <script>
+    const submit = document.querySelector('.submit');
+    let isClick = false;
+    
+    submit.addEventListener('click', function(){
+      const inputEmail = document.getElementById('email-input');
+      const errorIcon = document.querySelector('.icon-error');
+      const input = document.querySelector('.input');
+      const p = document.createElement('p');
+
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+      if (!emailPattern.test(inputEmail.value) && !isClick) {
+        errorIcon.style.display = 'block';
+        p.textContent = "Please provide a valid email!";
+        p.style.color = 'hsl(0, 74%, 74%)';
+        p.style.fontSize = '13px';
+        p.style.fontWeight = '400';
+        p.style.marginLeft = '32px';
+        p.style.letterSpacing = '0.1px';
+        p.style.marginTop = '10px';
+        input.append(p);
+        inputEmail.style.borderColor = 'red';
+        isClick = true;
+
+        setTimeout(() => {
+          isClick = false;
+          p.remove();
+          errorIcon.style.display ='none';
+          inputEmail.style.borderColor = '';
+        }, 2000);
+      }
+
+      if(emailPattern.test(inputEmail.value)){
+        inputEmail.style.borderColor = 'green';
+      }
+
+
+    });
+
+  </script>
+  
+</body>
+</html>
